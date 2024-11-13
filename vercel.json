@@ -1,12 +1,12 @@
 {
     "version": 2,
-    "name": "Ecom",
+    "name": "Frontend",
     "builds": [
       {
-        "src": "Frontend/package.json",
+        "src": "package.json",
         "use": "@vercel/static-build",
         "config": {
-          "distDir": "Frontend/dist",
+          "distDir": "dist",
           "buildCommand": "npm run build"
         }
       }
@@ -14,8 +14,11 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/Frontend/dist/$1"
+        "dest": "dist/$1"
       }
-    ]
+    ],
+    "scripts": {
+  "build": "vite build"
+}
   }
   
